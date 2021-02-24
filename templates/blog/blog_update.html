@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Update a news{% endblock %}
+
+{% block content %}
+    <h2> Do you want to update {{object.title}} ?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-success">update</button>
+
+    </form>
+
+{% endblock %}

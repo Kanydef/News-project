@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} new page {% endblock %}
+
+{% block content %} 
+    <form method="POST">
+        {% csrf_token %}
+        <h3>{{object.title}}</h3>
+        <p>{{object.body}}</p>
+        <p>{{object.author}}|{{object.date}}</p>
+
+
+        <button><a href="{% url 'blog_update' object.pk %}" class="btn btn-success">update</a></button>
+        <button><a href="{% url 'blog_delete' object.pk %}" class="btn btn-success">delete</a></button>
+
+    </form>
+
+
+    
+
+
+{% endblock %}
